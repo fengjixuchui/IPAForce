@@ -1,5 +1,8 @@
 # IPAForce
 
+
+#### Code Sign May Crash With Release App, In That Case, Sign It Yourself.  
+
 #### Description
 A project for lazy man to reverse engineering.  
 This project was setup at 2018.9.25 and taking its develop by a student.  
