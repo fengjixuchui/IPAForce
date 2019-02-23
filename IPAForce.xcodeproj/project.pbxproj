@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AB03055222211F6500754B75 /* unsign in Resources */ = {isa = PBXBuildFile; fileRef = AB03055122211F6500754B75 /* unsign */; };
 		AB0DFA8021628B7C00E80F3D /* LakrBootstrap.tar in Resources */ = {isa = PBXBuildFile; fileRef = AB0DFA7F21628B7B00E80F3D /* LakrBootstrap.tar */; };
 		AB0DFA822162BEE800E80F3D /* runiProxy.command in Resources */ = {isa = PBXBuildFile; fileRef = AB0DFA812162BEE500E80F3D /* runiProxy.command */; };
 		AB49E247215A3C8E00C2F277 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AB49E246215A3C8E00C2F277 /* AppDelegate.m */; };
@@ -42,6 +43,7 @@
 		0C04AEC537065F7E7E2AC6DE /* Pods-IPAForce.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IPAForce.release.xcconfig"; path = "Pods/Target Support Files/Pods-IPAForce/Pods-IPAForce.release.xcconfig"; sourceTree = "<group>"; };
 		8CF3B6C6E3B47495DDAB2EEB /* Pods-IPAForce.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IPAForce.debug.xcconfig"; path = "Pods/Target Support Files/Pods-IPAForce/Pods-IPAForce.debug.xcconfig"; sourceTree = "<group>"; };
 		91BC01B6E26DCB7C428F8FBB /* Pods_IPAForce.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IPAForce.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AB03055122211F6500754B75 /* unsign */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = unsign; sourceTree = "<group>"; };
 		AB0DFA7F21628B7B00E80F3D /* LakrBootstrap.tar */ = {isa = PBXFileReference; lastKnownFileType = archive.tar; path = LakrBootstrap.tar; sourceTree = "<group>"; };
 		AB0DFA812162BEE500E80F3D /* runiProxy.command */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = runiProxy.command; sourceTree = "<group>"; };
 		AB0EFF742161E8E4004A27D2 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
@@ -95,6 +97,7 @@
 		AB49E239215A3C8D00C2F277 = {
 			isa = PBXGroup;
 			children = (
+				AB03055122211F6500754B75 /* unsign */,
 				AB49E244215A3C8E00C2F277 /* IPAForce */,
 				AB49E243215A3C8E00C2F277 /* Products */,
 				AB0EFF732161E8E4004A27D2 /* Frameworks */,
@@ -186,6 +189,7 @@
 				AB49E262215A3DFF00C2F277 /* ShellScript */,
 				AB0EFF872161E960004A27D2 /* CopyFiles */,
 				9800B411650CC0567EF54845 /* [CP] Embed Pods Frameworks */,
+				AB03055322211F7500754B75 /* Run Script - Unsign Code - Run this after build. */,
 			);
 			buildRules = (
 			);
@@ -239,6 +243,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB03055222211F6500754B75 /* unsign in Resources */,
 				ABDCC098215BD8F60071B264 /* macIcon.png in Resources */,
 				AB49E24F215A3C9300C2F277 /* Assets.xcassets in Resources */,
 				ABDCC09C215BD8F60071B264 /* XcodeProjectIcon.png in Resources */,
@@ -300,6 +305,24 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-IPAForce/Pods-IPAForce-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		AB03055322211F7500754B75 /* Run Script - Unsign Code - Run this after build. */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script - Unsign Code - Run this after build.";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\nexit 0;\n\n# 强制移除代码签名\n$LOCROOT/unsign $BUILD_ROOT/Debug/IPAForce.app/Contents/MacOS/IPAForce;\n";
 		};
 		AB49E262215A3DFF00C2F277 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -378,7 +401,8 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "Don't Code Sign";
+				CODE_SIGN_STYLE = Manual;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -401,6 +425,7 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = macosx;
 			};
 			name = Debug;
@@ -437,7 +462,8 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "Don't Code Sign";
+				CODE_SIGN_STYLE = Manual;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -453,6 +479,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = macosx;
 			};
 			name = Release;
@@ -467,7 +494,7 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = 38X2VQKPXT;
+				DEVELOPMENT_TEAM = M4Z5DVY94F;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/IPAForce/Ress",
@@ -501,7 +528,7 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = 38X2VQKPXT;
+				DEVELOPMENT_TEAM = M4Z5DVY94F;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/IPAForce/Ress",

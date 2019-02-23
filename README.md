@@ -1,12 +1,13 @@
 # IPAForce
 
-
-#### Code Sign May Crash With Release App, In That Case, Sign It Yourself.  
+#### Code Sign Info:
+Due to f**king ADP 3.2(f), you may need to do resign or unsign before using this app.
+The unsign operator binary was added to here from: https://github.com/steakknife/unsign
 
 #### Description
 A project for lazy man to reverse engineering.  
 This project was setup at 2018.9.25 and taking its develop by a student.  
-If there is something wrong with the code or the code isn't that beautifull, then, pr it.  
+If there are something wrong with the codes or the codes is not so beautifull, then, pr it.  
 I promise to you I'm not an ijk developer or HanYuPinYin developer, but maybe a copy and paste developer.  
 :..( I'll try my best.  
 
@@ -43,8 +44,8 @@ You have right decleared in the license, but I still need to repeat:
 Expect behavior:  
 Unexpect behavior:  
 Is this issue affecting you using the main function?: Y/N  
-Is this issue an UI issue?: Y/N  
-Is it necesscary to fix it imminently?: Y/N  
+Is this issue a UI issue?: Y/N  
+Is is necesscary to fix it imminently?: Y/N  
 Notes:  
 
 ### Steps to reproduce
