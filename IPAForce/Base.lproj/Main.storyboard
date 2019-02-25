@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="jGA-0Y-lOj">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="jGA-0Y-lOj">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14313.18"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14460.31"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -985,7 +985,7 @@ Please wait.</string>
                             <visualEffectView appearanceType="inheritedVibrantLight" blendingMode="behindWindow" material="mediumLight" state="followsWindowActiveState" translatesAutoresizingMaskIntoConstraints="NO" id="OOw-7A-Oae">
                                 <rect key="frame" x="610" y="0.0" width="442" height="555"/>
                                 <subviews>
-                                    <textField verticalHuggingPriority="750" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="al3-3l-FXZ">
+                                    <textField hidden="YES" verticalHuggingPriority="750" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="al3-3l-FXZ">
                                         <rect key="frame" x="20" y="40" width="402" height="390"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="390" id="JuY-mY-p9N"/>
@@ -999,7 +999,6 @@ Please wait.</string>
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="8Vh-Wm-Ai2">
                                         <rect key="frame" x="39" y="446" width="364" height="57"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="57" id="Trb-SB-gFg"/>
                                             <constraint firstAttribute="height" constant="57" id="XzU-uF-FJf"/>
                                             <constraint firstAttribute="width" constant="360" id="jVp-eC-hw7"/>
                                         </constraints>
@@ -1009,28 +1008,66 @@ Please wait.</string>
                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                         </textFieldCell>
                                     </textField>
-                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="2CD-yb-tX0">
-                                        <rect key="frame" x="265" y="12" width="159" height="17"/>
+                                    <textField hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="2CD-yb-tX0">
+                                        <rect key="frame" x="132" y="12" width="292" height="17"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="155" id="7qa-rg-Epa"/>
+                                            <constraint firstAttribute="width" constant="288" id="7qa-rg-Epa"/>
                                             <constraint firstAttribute="height" constant="17" id="bGB-3c-1GL"/>
                                         </constraints>
-                                        <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="Select and drag for more." id="Rct-OE-euA">
+                                        <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="Sync from out put each second." id="Rct-OE-euA">
                                             <font key="font" metaFont="system"/>
                                             <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                         </textFieldCell>
                                     </textField>
+                                    <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZaL-Hl-EJp">
+                                        <rect key="frame" x="20" y="40" width="402" height="390"/>
+                                        <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="5ZE-Lw-eos">
+                                            <rect key="frame" x="0.0" y="0.0" width="402" height="390"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <subviews>
+                                                <textView editable="NO" importsGraphics="NO" richText="NO" verticallyResizable="YES" spellingCorrection="YES" smartInsertDelete="YES" id="SW4-md-gY2">
+                                                    <rect key="frame" x="0.0" y="0.0" width="402" height="390"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                    <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
+                                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <size key="minSize" width="402" height="390"/>
+                                                    <size key="maxSize" width="442" height="10000000"/>
+                                                    <attributedString key="textStorage">
+                                                        <fragment content="Waiting for sync...">
+                                                            <attributes>
+                                                                <color key="NSColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
+                                                                <font key="NSFont" size="12" name="Helvetica"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                    <color key="insertionPointColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                </textView>
+                                            </subviews>
+                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </clipView>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="390" id="L9D-Xg-Ak8"/>
+                                        </constraints>
+                                        <scroller key="verticalScroller" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="utS-d0-mEW">
+                                            <rect key="frame" x="386" y="0.0" width="16" height="390"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </scroller>
+                                    </scrollView>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="8Vh-Wm-Ai2" secondAttribute="trailing" constant="41" id="9bB-xD-7Q6"/>
                                     <constraint firstAttribute="bottom" secondItem="2CD-yb-tX0" secondAttribute="bottom" constant="12" id="APq-HK-hHB"/>
+                                    <constraint firstAttribute="trailing" secondItem="ZaL-Hl-EJp" secondAttribute="trailing" constant="20" id="OQU-cS-i1s"/>
                                     <constraint firstItem="al3-3l-FXZ" firstAttribute="leading" secondItem="OOw-7A-Oae" secondAttribute="leading" constant="20" id="Qhw-Wq-0i0"/>
+                                    <constraint firstItem="ZaL-Hl-EJp" firstAttribute="leading" secondItem="OOw-7A-Oae" secondAttribute="leading" constant="20" id="RWw-5p-TUK"/>
                                     <constraint firstAttribute="trailing" secondItem="2CD-yb-tX0" secondAttribute="trailing" constant="20" id="WXj-MB-2FX"/>
                                     <constraint firstItem="8Vh-Wm-Ai2" firstAttribute="top" secondItem="OOw-7A-Oae" secondAttribute="top" constant="52" id="WaG-Vd-WRr"/>
                                     <constraint firstAttribute="bottom" secondItem="al3-3l-FXZ" secondAttribute="bottom" constant="40" id="jic-7u-oqe"/>
                                     <constraint firstAttribute="width" constant="442" id="lAy-il-VTe"/>
                                     <constraint firstItem="8Vh-Wm-Ai2" firstAttribute="leading" secondItem="OOw-7A-Oae" secondAttribute="leading" constant="41" id="sxC-aG-GYl"/>
+                                    <constraint firstAttribute="bottom" secondItem="ZaL-Hl-EJp" secondAttribute="bottom" constant="40" id="vtp-5o-dBt"/>
                                     <constraint firstAttribute="trailing" secondItem="al3-3l-FXZ" secondAttribute="trailing" constant="20" id="xFT-j5-eMl"/>
                                 </constraints>
                             </visualEffectView>
@@ -1048,6 +1085,7 @@ Please wait.</string>
                     <connections>
                         <outlet property="appListField" destination="al3-3l-FXZ" id="22u-Vk-WcX"/>
                         <outlet property="injectRevealProgress" destination="CBQ-Wj-OOJ" id="Rko-wk-al8"/>
+                        <outlet property="realLogWindow" destination="SW4-md-gY2" id="MH5-qD-Oiz"/>
                         <outlet property="rightsLabel" destination="8mL-iG-6yb" id="xq0-ps-ll2"/>
                         <outlet property="secondLabel" destination="8Vh-Wm-Ai2" id="asB-B9-GGX"/>
                         <outlet property="setupMacProgress" destination="CM7-nc-9FJ" id="RbU-20-qM5"/>
@@ -1057,7 +1095,7 @@ Please wait.</string>
                 </viewController>
                 <customObject id="2Tp-Fl-jBw" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="95" y="867"/>
+            <point key="canvasLocation" x="95" y="866.5"/>
         </scene>
     </scenes>
     <resources>

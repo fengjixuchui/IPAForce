@@ -21,6 +21,8 @@
     @property (weak) IBOutlet NSTextField *appListField;
     @property (weak) IBOutlet NSTextField *secondLabel;
     @property (weak) IBOutlet NSProgressIndicator *injectRevealProgress;
+    @property (unsafe_unretained) IBOutlet NSTextView *realLogWindow;
+    
 
 
 @end

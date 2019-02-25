@@ -9,8 +9,6 @@
 #import "ViewController.h"
 
 
-
-
 @interface initVCWindowController()
 @end
 
@@ -78,6 +76,10 @@
     self.view.wantsLayer = YES;
     self.view.layer.backgroundColor = [NSColor whiteColor].CGColor;
     
+    // 注册计划任务来更新输出
+    [NSTimer scheduledTimerWithTimeInterval:5.0f
+                                     target:self selector:@selector(updateRealLogWindow:) userInfo:nil repeats:YES];
+    
     // 后台更新系统状态
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         @autoreleasepool {
@@ -93,6 +95,19 @@
         }
     });
     
+}
+
+// 强制更新输出界面
+- (void) updateRealLogWindow:(NSTimer *)timer
+{
+    
+    if ([_realLogWindow.string isEqualToString:_appListField.stringValue]) {
+        return;
+    }
+    
+    [_realLogWindow setString: _appListField.stringValue];
+    [_realLogWindow setFont:[NSFont fontWithName:@"Menlo" size:11]];
+
 }
 
 - (void)setRepresentedObject:(id)representedObject {
