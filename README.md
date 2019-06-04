@@ -1,5 +1,9 @@
 # IPAForce
 
+
+#### Terminal Shell ENV:
+Please use bash as shell enivronment when execute setup macOS.
+
 #### Code Sign Info:
 Due to f**king ADP 3.2(f), you may need to do resign or unsign before using this app.
 The unsign operator binary was added to here from: https://github.com/steakknife/unsign
