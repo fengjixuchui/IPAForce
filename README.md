@@ -1,6 +1,6 @@
 # IPAForce
 
-#### There is a know bug wont be fixed recently but next version of this app.
+#### There is a known bug wont be fixed recently but next version of this app.
 If you failed to start this app, or crashed after 0.5s or so, make sure your xcode was selected in the right way.
 
 #### Terminal Shell ENV:
