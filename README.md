@@ -1,5 +1,11 @@
 # IPAForce
 
+#### There is a known bug wont be fixed recently but next version of this app.
+If you failed to start this app, or crashed after 0.5s or so, make sure your xcode was selected in the right way.
+
+#### Terminal Shell ENV:
+Please use bash as shell enivronment when execute setup macOS.
+
 #### Code Sign Info:
 Due to f**king ADP 3.2(f), you may need to do resign or unsign before using this app.
 The unsign operator binary was added to here from: https://github.com/steakknife/unsign
